@@ -6,8 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Budget Traveler</title>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
-  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!--<link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script> -->
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -19,8 +20,8 @@
     </div>
     <div class="profile">
       <div class="cart-icon-container">
-        <img id="menu-cart" src="./images/cart.png" alt="" />
-        <h2 id="cart-count">0</h2>
+        <img id="menu-cart" class="w-10" src="./images/cart.png" alt="" />
+        <h2 id="cart-count" class="font-semibold">0</h2>
       </div>
       <li>Home</li>
       <li>Setting</li>
@@ -47,14 +48,14 @@
 
     <!-- main content area -->
     <div class="category"></div>
-    <section class="content-area-cotainer">
+    <section class="content-area-cotainer mb-10">
       <div class="left-content">
         <div class="palce">
           <img class="place-img" src="./images/shajek.jpg" alt="" />
           <div>
             <h2>Shajek</h2>
             <h4>Cost: <span class="price">300</span> $</h4>
-            <button class="add-btn">Add to Cart</button>
+            <button class="add-btn btn btn-success">Add to Cart</button>
           </div>
         </div>
         <div class="palce">
@@ -62,7 +63,7 @@
           <div>
             <h2>Dhaka</h2>
             <h4>Cost: <span class="price">300</span> $</h4>
-            <button class="add-btn">Add to Cart</button>
+            <button class="add-btn btn btn-success">Add to Cart</button>
           </div>
         </div>
         <div class="palce">
@@ -70,7 +71,7 @@
           <div>
             <h2>Khulna</h2>
             <h4>Cost: <span class="price">500</span> $</h4>
-            <button class="add-btn">Add to Cart</button>
+            <button class="add-btn btn btn-success">Add to Cart</button>
           </div>
         </div>
         <div class="palce">
@@ -78,26 +79,28 @@
           <div>
             <h2>Cox Bazar</h2>
             <h4>Cost: <span class="price">500</span> $</h4>
-            <button class="add-btn">Add to Cart</button>
+            <button class="add-btn btn btn-success">Add to Cart</button>
           </div>
         </div>
       </div>
       <div id="cart-container" class="cart">
         <h1>Cart</h1>
         <hr />
-        <ul id="selected-place-container" class="selected-place-container"></ul>
+        <ul id="selected-place-container" class="selected-place-container">
+          <!-- here will come all selected items -->
+        </ul>
         <hr />
         <div class="calculation-area">
           <h4>Total cost: <span id="total-cost">0</span> $</h4>
         </div>
         <div class="all-cat-btn">
-          <button onclick="grandTotal('bus')" class="category-btn">
+          <button onclick="grandTotal('bus')" class="category-btn btn btn-success">
             Bus +100
           </button>
-          <button onclick="grandTotal('train')" class="category-btn">
+          <button onclick="grandTotal('train')" class="category-btn btn btn-success">
             Train -200
           </button>
-          <button onclick="grandTotal('flight')" class="category-btn">
+          <button onclick="grandTotal('flight')" class="category-btn btn btn-success">
             Flight +500
           </button>
         </div>
