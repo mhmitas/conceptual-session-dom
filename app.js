@@ -22,12 +22,13 @@ for (const btn of allButton) {
         li.appendChild(priceDiv)
         // make total and update total-
         getTotalAndUpdate('total-cost', price)
+        // extra charge add. 
+
         // make grand total and update 
-        // const ultimateTotalcost = document.getElementById('total-cost').innerText
-        // setInnerText('grand-total', ultimateTotalcost)
-        // getTotalAndUpdate('grand-total',)
+
     })
 }
+
 
 
 
@@ -44,3 +45,14 @@ function getTotalAndUpdate(elementId, value) {
     const sum = makeNum + valueNum;
     setInnerText(elementId, sum)
 }
+
+
+
+
+
+
+
+//---------------------------------------
+// const ultimateTotalcost = document.getElementById('total-cost').innerText
+// setInnerText('grand-total', ultimateTotalcost)
+// getTotalAndUpdate('grand-total',)
