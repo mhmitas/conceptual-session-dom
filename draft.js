@@ -5,10 +5,15 @@
 
 // }
 
-function cartProductCount() {
+function cartProductCount(e) {
     const cartCount = parseInt(getInnerText('cart-count'));
     const updateCartCount = cartCount + 1;
     setInnerText('cart-count', updateCartCount);
+    console.log(e)
+}
+
+function sendInfoToCalculationArea(){
+    document.getElementById('')
 }
 
 // uitility ------------------
