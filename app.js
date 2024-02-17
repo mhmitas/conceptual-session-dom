@@ -5,14 +5,15 @@ let count = 0;
 for (const button of allButton) {
     button.addEventListener('click', function (e) {
         count += 1;
-        setElementById('cart-count', count)
+        setInnerTextById('cart-count', count)
 
         // send info to cart container from card
         const placeName = e.target.parentNode.childNodes[1].innerText;
         const placePrice = e.target.parentNode.childNodes[3].childNodes[1].innerText
         // console.log(placePrice)
+
+        // send info to selected-place-container from card 
         const selectedPlaceContainer = document.getElementById('selected-place-container')
-        // console.log(selectedPlaceContainer)
         const li = document.createElement('li')
         const nameDiv = document.createElement('div')
         const priceDiv = document.createElement('div')
@@ -23,17 +24,19 @@ for (const button of allButton) {
         li.appendChild(priceDiv);
 
         // make total
-        const total = document.getElementById('total-cost').innerText
-        const convertedTotal = parseInt(total)
-        const sum = convertedTotal + parseInt(placePrice)
-        setElementById('total-cost', sum)
+        totalPrice('total-cost', placePrice)
 
-        // deal with budget
-        const budget = document.getElementById('budget').innerText
-        const convertedBudget = parseInt(budget);
-        const leftBudget = convertedBudget - parseInt(placePrice);
-        setElementById('budget',leftBudget)
     })
+}
+
+
+// make total
+function totalPrice(id, value) {
+    const total = document.getElementById(id).innerText
+    const convertedTotal = parseInt(total)
+    const sum = convertedTotal + parseInt(value)
+    setInnerTextById(id, sum)
+    grandTotalCost('other')
 }
 
 
@@ -42,20 +45,27 @@ function grandTotalCost(category) {
     const total = document.getElementById('total-cost').innerText
     const convertedTotal = parseInt(total);
     if (category === 'bus') {
-        setElementById('grand-total', convertedTotal + 100)
+        setInnerTextById('grand-total', convertedTotal + 100)
     } else if (category === 'train') {
-        setElementById('grand-total', convertedTotal - 200)
+        setInnerTextById('grand-total', convertedTotal - 200)
     } else if (category === 'flight') {
-        setElementById('grand-total', convertedTotal + 500)
+        setInnerTextById('grand-total', convertedTotal + 500)
     } else {
-        setElementById('grand-total', convertedTotal)
+        setInnerTextById('grand-total', convertedTotal)
     }
 }
+
 
 
 // ------------------------------
 // Uitility -->
 
-function setElementById(id, value) {
+function setInnerTextById(id, value) {
     document.getElementById(id).innerText = value;
+}
+
+function getBudgetValue(id) {
+    const budgetInnerText = document.getElementById(id).innerText
+    const budget = parseInt(budgetInnerText);
+    return budget;
 }
