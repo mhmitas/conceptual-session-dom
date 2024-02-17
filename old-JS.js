@@ -97,16 +97,12 @@ function grandTotalCost(category) {
     const totalCost = document.getElementById('total-cost').innerText;
     const convertedTotalCost = parseInt(totalCost);
     if (category === 'bus') {
-        console.log('convertedTotalCost', convertedTotalCost + 100)
         setInnerText('grand-total', convertedTotalCost + 100)
     } else if (category === 'train') {
-        console.log('convertedTotalCost', convertedTotalCost - 200)
         setInnerText('grand-total', convertedTotalCost - 200)
     } else if (category === 'flight') {
-        console.log('convertedTotalCost', convertedTotalCost + 500)
         setInnerText('grand-total', convertedTotalCost + 500)
     }else{
-        console.log('convertedTotalCost', convertedTotalCost)
         setInnerText('grand-total', convertedTotalCost)
     }
 }

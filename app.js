@@ -25,17 +25,32 @@ for (const button of allButton) {
         // make total
         const total = document.getElementById('total-cost').innerText
         const convertedTotal = parseInt(total)
-        const sum = convertedTotal + parseInt(placePrice) 
+        const sum = convertedTotal + parseInt(placePrice)
         setElementById('total-cost', sum)
 
-        // 
-
-        
+        // deal with budget
+        const budget = document.getElementById('budget').innerText
+        const convertedBudget = parseInt(budget);
+        const leftBudget = convertedBudget - parseInt(placePrice);
+        setElementById('budget',leftBudget)
     })
 }
 
 
-
+// make grand total
+function grandTotalCost(category) {
+    const total = document.getElementById('total-cost').innerText
+    const convertedTotal = parseInt(total);
+    if (category === 'bus') {
+        setElementById('grand-total', convertedTotal + 100)
+    } else if (category === 'train') {
+        setElementById('grand-total', convertedTotal - 200)
+    } else if (category === 'flight') {
+        setElementById('grand-total', convertedTotal + 500)
+    } else {
+        setElementById('grand-total', convertedTotal)
+    }
+}
 
 
 // ------------------------------
