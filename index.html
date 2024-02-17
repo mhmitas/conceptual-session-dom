@@ -51,7 +51,7 @@
           <div>
             <h2>Shajek</h2>
             <h4>Cost: <span class="price">300</span> $</h4>
-            <button class="add-btn">Add to Cart</button>
+            <button class="add-btn button">Add to Cart</button>
           </div>
         </div>
         <div class="palce">
@@ -59,7 +59,7 @@
           <div>
             <h2>Dhaka</h2>
             <h4>Cost: <span class="price">300</span> $</h4>
-            <button class="add-btn">Add to Cart</button>
+            <button class="add-btn button">Add to Cart</button>
           </div>
         </div>
         <div class="palce">
@@ -67,7 +67,7 @@
           <div>
             <h2>Khulna</h2>
             <h4>Cost: <span class="price">500</span> $</h4>
-            <button class="add-btn">Add to Cart</button>
+            <button class="add-btn button">Add to Cart</button>
           </div>
         </div>
         <div class="palce">
@@ -75,7 +75,7 @@
           <div>
             <h2>Cox Bazar</h2>
             <h4>Cost: <span class="price">500</span> $</h4>
-            <button class="add-btn">Add to Cart</button>
+            <button class="add-btn button">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -85,18 +85,18 @@
         <ul id="selected-place-container" class="selected-place-container">
           <!-- here will come all selected items -->
         </ul>
-        <hr/>
+        <hr />
         <div class="calculation-area">
-          <h4>Total cost: <span id="total-cost">1</span> $</h4>
+          <h4>Total cost: <span id="total-cost">0</span> $</h4>
         </div>
         <div class="all-cat-btn">
-          <button onclick="grandTotal('bus')" class="category-btn btn btn-success">
+          <button onclick="grandTotalCost('bus')" class="button">
             Bus +100
           </button>
-          <button onclick="grandTotal('train')" class="category-btn btn btn-success">
+          <button onclick="grandTotalCost('train')" class="button">
             Train -200
           </button>
-          <button onclick="grandTotal('flight')" class="category-btn btn btn-success">
+          <button onclick="grandTotalCost('flight')" class="button">
             Flight +500
           </button>
         </div>
@@ -106,7 +106,9 @@
     </section>
   </main>
 
-  <footer></footer>
+  <footer class="footer">
+
+  </footer>
 
   <!-- script file  -->
   <script src="./app.js"></script>

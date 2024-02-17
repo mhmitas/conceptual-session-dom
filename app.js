@@ -54,7 +54,6 @@ for (const button of allButton) {
 
         // create element to send productPrice and productName to calculation area.
         const selectedPlaceContainer = document.getElementById('selected-place-container')
-        console.log(selectedPlaceContainer)
         const li = document.createElement('li')
 
         const name = document.createElement('div')
@@ -67,7 +66,11 @@ for (const button of allButton) {
         li.appendChild(price)
 
         // make total and send them
-        getTotalAndUpdate('total-cost', productPrice)
+        totalCost('total-cost', productPrice)
+
+        // make grand total
+
+
     })
 }
 
@@ -83,15 +86,30 @@ function setInnerText(id, value) {
     document.getElementById(id).innerText = value;
 }
 
-function getTotalAndUpdate(elementId, productPrice) {
-    const productPriceNum = parseInt(productPrice)
-    const getTotalString = document.getElementById(elementId).innerText
-    const makeTotalNum = parseInt(getTotalString)
-    total = makeTotalNum + productPriceNum;
+function totalCost(elementId, value) {
+    const totalCostString = document.getElementById(elementId).innerText
+    const totalCostNum = parseInt(totalCostString)
+    const total = totalCostNum + parseInt(value);
     setInnerText(elementId, total)
 }
 
-
+function grandTotalCost(category) {
+    const totalCost = document.getElementById('total-cost').innerText;
+    const convertedTotalCost = parseInt(totalCost);
+    if (category === 'bus') {
+        console.log('convertedTotalCost', convertedTotalCost + 100)
+        setInnerText('grand-total', convertedTotalCost + 100)
+    } else if (category === 'train') {
+        console.log('convertedTotalCost', convertedTotalCost - 200)
+        setInnerText('grand-total', convertedTotalCost - 200)
+    } else if (category === 'flight') {
+        console.log('convertedTotalCost', convertedTotalCost + 500)
+        setInnerText('grand-total', convertedTotalCost + 500)
+    }else{
+        console.log('convertedTotalCost', convertedTotalCost)
+        setInnerText('grand-total', convertedTotalCost)
+    }
+}
 
 
 
