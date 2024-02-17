@@ -41,11 +41,11 @@ for (const btn of allButton) {
 
 let count = 0;
 
-for(const button of allButton){
-    button.addEventListener('click', function(e){
+for (const button of allButton) {
+    button.addEventListener('click', function (e) {
         // update cart count
-        count = count+1;
-        setInnerText('cart-count',count)
+        count = count + 1;
+        setInnerText('cart-count', count)
 
         // send info to calculation area after click on add button
         // get information from card via clicked btn
@@ -66,7 +66,8 @@ for(const button of allButton){
         li.appendChild(name)
         li.appendChild(price)
 
-
+        // make total and send them
+        getTotalAndUpdate('total-cost', productPrice)
     })
 }
 
@@ -82,12 +83,12 @@ function setInnerText(id, value) {
     document.getElementById(id).innerText = value;
 }
 
-function getTotalAndUpdate(elementId, value) {
-    const valueNum = parseInt(value)
-    const getString = document.getElementById(elementId).innerText
-    const makeNum = parseInt(getString)
-    const sum = makeNum + valueNum;
-    setInnerText(elementId, sum)
+function getTotalAndUpdate(elementId, productPrice) {
+    const productPriceNum = parseInt(productPrice)
+    const getTotalString = document.getElementById(elementId).innerText
+    const makeTotalNum = parseInt(getTotalString)
+    total = makeTotalNum + productPriceNum;
+    setInnerText(elementId, total)
 }
 
 
